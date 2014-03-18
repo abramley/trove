@@ -213,6 +213,7 @@ common_opts = [
                          'redis': 'b216ffc5-1947-456c-a4cf-70f94c05f7d0',
                          'cassandra': '459a230d-4e97-4344-9067-2a54a310b0ed',
                          'couchbase': 'fa62fe68-74d9-4779-a24e-36f19602c415',
+                         'tesora-dve': 'f45b84b7-9f1b-4e8c-aa13-fcc8abf289ce',
                          'mongodb': 'c8c907af-7375-456f-b929-b637ff9209ee'},
                 help='Unique ID to tag notification events.'),
     cfg.StrOpt('nova_proxy_admin_user', default='',
@@ -282,6 +283,12 @@ mysql_opts = [
     cfg.IntOpt('usage_timeout', default=400,
                help='Timeout to wait for a guest to become active.'),
 ]
+
+
+# Tesora DVE
+tesora_dve_group = cfg.OptGroup(
+    'tesora-dve', title='Tesora DVE options',
+    help="Oslo option group designed for Tesora DVE datastore")
 
 # Percona
 percona_group = cfg.OptGroup(
@@ -413,6 +420,7 @@ CONF.register_group(couchbase_group)
 CONF.register_group(mongodb_group)
 
 CONF.register_opts(mysql_opts, mysql_group)
+CONF.register_opts(mysql_opts, tesora_dve_group)
 CONF.register_opts(percona_opts, percona_group)
 CONF.register_opts(redis_opts, redis_group)
 CONF.register_opts(cassandra_opts, cassandra_group)

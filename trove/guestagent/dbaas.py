@@ -33,6 +33,7 @@ from trove.common import cfg
 LOG = log.getLogger(__name__)
 defaults = {
     'mysql': 'trove.guestagent.datastore.mysql.manager.Manager',
+    'tesora-dve': 'trove.guestagent.datastore.mysql.manager.Manager',
     'percona': 'trove.guestagent.datastore.mysql.manager.Manager',
     'redis': 'trove.guestagent.datastore.redis.manager.Manager',
     'cassandra': 'trove.guestagent.datastore.cassandra.manager.Manager',
